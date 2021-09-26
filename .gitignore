@@ -3,7 +3,6 @@
 *.a
 u-boot*
 .depend
-.config
 .menuconfig.log
 .tmp_config
 System.map
