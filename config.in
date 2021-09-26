@@ -1,3 +1,4 @@
+#
 if [ "$MT7621_FPGA_BOARD" = "y" -o "$MT7621_ASIC_BOARD" = "y" ]; then
 string 'Cross Compiler Path' CONFIG_CROSS_COMPILER_PATH  /opt/mips-2012.03/bin/
 elif [ "$RT2880_FPGA_BOARD" = "y" -o "$RT2880_ASIC_BOARD" = "y" -o
@@ -1372,17 +1373,17 @@ if [ "$MT7621_CPU_50MHZ" = "y" ]; then
     define_hex  MT7621_CPU_FREQUENCY    32
 fi
 
-#choice 'UART baud rate' "57600bps MT7621_UART_57600 \
-#						115200bps MT7621_UART_115200"
-#						115200bps
-#if [ "$MT7621_UART_57600" = "y" ]; then
-#    define_int  MT7621_UART_BAUD 57600
-#    define_int MT7621_UCLK_20M 1
-#fi
-#if [ "$MT7621_UART_115200" = "y" ]; then
-#    define_int  MT7621_UART_BAUD 115200
-#    define_int MT7621_UCLK_20M 0
-#fi
+choice 'UART baud rate' "57600bps MT7621_UART_57600 \
+						115200bps MT7621_UART_115200"
+						115200bps
+if [ "$MT7621_UART_57600" = "y" ]; then
+    define_int  MT7621_UART_BAUD 57600
+    define_int MT7621_UCLK_20M 1
+fi
+if [ "$MT7621_UART_115200" = "y" ]; then
+    define_int  MT7621_UART_BAUD 115200
+    define_int MT7621_UCLK_20M 0
+fi
 #-----------------------
 # MT7621 Option
 #-----------------------
