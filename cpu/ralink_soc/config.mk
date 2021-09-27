@@ -21,7 +21,7 @@
 # MA 02111-1307 USA
 #
 v=$(shell \
-$(AS) --version|grep "GNU assembler"|awk -F . '{print $$2}')
+$(AS) --version|grep "GNU assembler" |awk '{print $$NF}' |awk -F . '{print $$2}')
 MIPSFLAGS=$(shell \
 if [ "$v" -lt "14" ]; then \
 	echo "-mabicalls"; \
