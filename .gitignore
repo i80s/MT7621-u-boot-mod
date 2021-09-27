@@ -2,6 +2,7 @@
 *.o
 *.a
 u-boot*
+uboot.bin
 .depend
 .menuconfig.log
 .tmp_config
@@ -12,3 +13,4 @@ tools/mkimage
 *~
 *.old
 tags
+scripts/lxdialog/lxdialog
