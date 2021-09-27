@@ -753,10 +753,10 @@ endif
 AFLAGS_DEBUG := -Wa,-gstabs
 AFLAGS := $(AFLAGS_DEBUG) -D__ASSEMBLY__ $(CPPFLAGS)
 
-#ifeq ($(MT7621_MP),y)
-#CFLAGS +=-fpic
-#AFLAGS +=-fno-pic
-#endif
+ifeq ($(MT7621_MP),y)
+CFLAGS +=-fpic
+AFLAGS +=-fno-pic
+endif
 
 LDFLAGS += -Bstatic -T $(LDSCRIPT) -Ttext $(TEXT_BASE) $(PLATFORM_LDFLAGS)
 
